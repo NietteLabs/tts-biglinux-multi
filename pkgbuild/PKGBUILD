@@ -7,11 +7,12 @@ arch=('any')
 license=('GPL')
 url="https://github.com/biglinux/tts-biglinux"
 pkgdesc="Text to speech with graphical configuration and very easy to use"
-depends=('rhvoice' 'xsel')
+depends=('rhvoice' 'wl-clipboard')
 optdepends=('rhvoice-voice-leticia-f123'
-            'rhvoice-voice-evgeniy-eng'
-            'rhvoice-brazilian-portuguese-complementary-dict-biglinux')
-source=("git+https://github.com/biglinux/tts-biglinux.git")
+    'rhvoice-voice-evgeniy-eng'
+    'rhvoice-brazilian-portuguese-complementary-dict-biglinux')
+
+source=("git+https://github.com/NietteLabs/tts-biglinux-multi.git")
 md5sums=(SKIP)
 
 package() {
@@ -21,7 +22,6 @@ package() {
     else
         InternalDir="${srcdir}/${pkgname}"
     fi
-
 
     # Copy files
     if [ -d "${InternalDir}/usr" ]; then
